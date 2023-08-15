@@ -2,15 +2,15 @@
   <q-page class="q-pa-sm">
     <div class="row justify-center">
       <div class="col-8 ">
-        <q-btn size="22px" class="full-width q-mb-md" color="secondary" label="Actualizar Datos" @click="recargar()" />
+        <q-btn size="15px" class="full-width q-mb-md" color="secondary" label="Actualizar Datos" icon="refresh" @click="recargar()" />
       </div>
     </div>
     <div class="row q-col-gutter-sm q-py-sm">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <pie-chart></pie-chart>
+        <pie-chart class="shadow-2 rounded-borders"></pie-chart>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <bar-chart></bar-chart>
+        <bar-chart class="shadow-2 rounded-borders"></bar-chart>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <TableChart></TableChart>

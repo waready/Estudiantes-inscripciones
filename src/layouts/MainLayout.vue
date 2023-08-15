@@ -1,14 +1,12 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="lHh Lpr lFf" class="table-bg" >
+    <q-header elevated class="fondo shadow-2 rounded-borders" style="box-shadow: 10px 0px 10px rgb(255, 255, 255);">
       <q-toolbar>
-        <q-img src="http://www.cepreuna.edu.pe/assets/images/logo/logo-white.png" width="55px"></q-img>
+        <q-img src="http://www.cepreuna.edu.pe/assets/images/logo/logo-white.png" width="60px" style="position:absolute"></q-img>
 
-        <q-toolbar-title class="flex flex-center">
+        <q-toolbar-title class="flex flex-center ">
           App Estudiantes Inscritos
         </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
@@ -88,3 +86,9 @@ export default defineComponent({
   }
 })
 </script>
+<style scoped>
+.fondo {
+    background-color: #09264f;
+}
+
+</style>

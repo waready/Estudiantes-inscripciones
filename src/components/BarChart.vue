@@ -82,20 +82,27 @@ export default defineComponent({
           sedeIndex = acc.length - 1;
         }
         if (objeto.areas === 'Sociales') {
-          acc[sedeIndex][1] += objeto.cantidad;
-        } else if (objeto.areas === 'Ingenierías') {
-          acc[sedeIndex][2] += objeto.cantidad;
-        } else if (objeto.areas === 'Biomédicas') {
           acc[sedeIndex][3] += objeto.cantidad;
+        } else if (objeto.areas === 'Ingenierías') {
+          acc[sedeIndex][1] += objeto.cantidad;
+        } else if (objeto.areas === 'Biomédicas') {
+          acc[sedeIndex][2] += objeto.cantidad;
         }
+        // if (objeto.areas === 'Sociales') {
+        //   acc[sedeIndex][1] += objeto.cantidad;
+        // } else if (objeto.areas === 'Ingenierías') {
+        //   acc[sedeIndex][2] += objeto.cantidad;
+        // } else if (objeto.areas === 'Biomédicas') {
+        //   acc[sedeIndex][3] += objeto.cantidad;
+        // }
 
         return acc;
       }, []);
 
-      resultado.unshift(['Areas', 'Sociales', 'Ingenierías', 'Biomédicas']);
+      resultado.unshift(['Areas', 'Ingenierías', 'Biomédicas', 'Sociales']);
 
       this.options.dataset.source = resultado
-      
+
     }
   }
 })
