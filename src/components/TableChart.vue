@@ -43,7 +43,7 @@ export default {
                     Authorization: 'cepreuna_v1_api'
                 }
             })
-            console.log(respuesta.data.turnos)
+           
             this.rows = respuesta.data.turnos;
         }
     }

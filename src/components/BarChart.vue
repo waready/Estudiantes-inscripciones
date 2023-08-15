@@ -8,7 +8,7 @@
         </q-btn>
       </q-card-section>
       <q-card-section>
-        <ECharts ref="barchart" :option="options" class="q-mt-md" :resizable="true" autoresize style="height: 300px;" />
+        <ECharts ref="barchart" :option="options" class="q-mt-md" :resizable="true" autoresize style="height: 285px;" />
       </q-card-section>
     </q-card>
   </div>
