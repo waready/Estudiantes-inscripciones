@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf" class="table-bg" >
-    <q-header elevated class="fondo shadow-2 rounded-borders" style="box-shadow: 10px 0px 10px rgb(255, 255, 255);">
+    <q-header elevated class="fondo shadow-2" style="box-shadow: 10px 0px 10px rgb(255, 255, 255);">
       <q-toolbar>
         <q-img src="http://www.cepreuna.edu.pe/assets/images/logo/logo-white.png" width="60px" style="position:absolute"></q-img>
 

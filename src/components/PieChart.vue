@@ -10,7 +10,7 @@
         </q-card>
     </div>
 </template>
-  
+
 <script>
 import { defineComponent } from "vue";
 import ECharts from "vue-echarts";
@@ -38,7 +38,7 @@ export default defineComponent({
                 },
                 series: [
                     {
-                        name: 'Access source',
+                        name: 'Cantidad',
                         type: 'pie',
                         radius: ['40%', '70%'],
                         center: ['50%', '35%'],
@@ -87,5 +87,5 @@ export default defineComponent({
     }
 })
 </script>
-  
+
 <style scoped></style>
