@@ -2,7 +2,7 @@
   <div>
     <q-card class="no-shadow" bordered>
       <q-card-section class="text-h6">
-        Cantidad Inscritos por Areas & Sedes
+        Cantidad Inscritos por Areas & Sedes {{ suma }} <h5 v-if="sede">Sede: {{ sede }}  </h5>
         <q-btn icon="fa fa-download" class="float-right" @click="SaveImage" flat dense>
           <q-tooltip>Download PNG</q-tooltip>
         </q-btn>
@@ -22,6 +22,7 @@ import axios from 'axios';
 
 export default defineComponent({
   name: "BarChart",
+  props:["sede"],
   mounted() {
     this.getInscritos();
   },
@@ -75,7 +76,19 @@ export default defineComponent({
           Authorization: 'cepreuna_v1_api'
         }
       })
-      let resultado = respuesta.data.areas.reduce(function (acc, objeto) {
+      var areas=respuesta.data.areas
+
+      // console.log("sedes ",this.sede)
+
+      if(this.sede){
+
+      areas=respuesta.data.areas.filter((item)=>{
+        return item.sede==this.sede;
+      })
+
+      }
+      let resultado =areas.reduce(function (acc, objeto) {
+
         var sedeIndex = acc.findIndex(item => item[0] === objeto.sede);
         if (sedeIndex === -1) {
           acc.push([objeto.sede, 0, 0, 0]); // Agregar una nueva entrada para la sede
@@ -104,7 +117,10 @@ export default defineComponent({
       this.options.dataset.source = resultado
 
     }
-  }
+
+  },
+
+
 })
 </script>
 

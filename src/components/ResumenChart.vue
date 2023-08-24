@@ -25,10 +25,11 @@
             >
               <q-item>
                 <q-item-section top avatar @click="detalle(item)">
-                  <q-avatar
+                  <q-btn
                     :color="item.color"
                     text-color="white"
                     icon="fa fa-bar-chart"
+                    :to="`sede/${item.sede}`"
                   />
                 </q-item-section>
                 <q-item-section>
@@ -50,6 +51,7 @@ import axios from "axios";
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "Resumen",
+  props: ["suma"],
   mounted() {
     this.getInscritos();
   },
