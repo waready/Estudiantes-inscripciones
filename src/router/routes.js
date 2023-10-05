@@ -12,7 +12,7 @@ const routes = [
       { path: '/sede/Juliaca', component: () => import('pages/Juliaca.vue') },
       { path: '/sede/Puno', component: () => import('pages/Puno.vue') },
       { path: '/sede/Virtual', component: () => import('pages/Virtual.vue') },
-
+      { path: '/pagos', component: () => import('pages/PagosAlumnos.vue') },
     ]
   },
 
