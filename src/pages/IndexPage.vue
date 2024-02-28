@@ -5,8 +5,8 @@
         <q-btn size="15px" class="full-width q-mb-md" color="secondary" label="Actualizar Datos" icon="refresh"
           @click="recargar()" />
 
-        <q-btn size="17px" class="full-width q-mb-md" color="primary" label="Pagos alumnos sede" icon="install_mobile"
-          to="/pagos" />
+        <!-- <q-btn size="17px" class="full-width q-mb-md" color="primary" label="Pagos alumnos sede" icon="install_mobile"
+          to="/pagos" /> -->
 
       </div>
     </div>
