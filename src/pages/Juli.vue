@@ -4,21 +4,19 @@
 </template>
 
 <script>
-import BarChart from 'src/components/BarChart.vue';
-import TableChart from 'src/components/TableChart.vue';
+import BarChart from "src/components/BarChart.vue";
+import TableChart from "src/components/TableChart.vue";
 export default {
-  components:{
+  components: {
     BarChart,
-    TableChart
+    TableChart,
   },
-  data(){
+  data() {
     return {
-      nombre: "Juli"
-    }
-  }
-}
+      nombre: "Juli - Chucuito",
+    };
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
