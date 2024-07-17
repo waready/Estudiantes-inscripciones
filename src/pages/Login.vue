@@ -10,12 +10,17 @@
                             <q-img src="~assets/img/logo.png" />
                         </q-card-section>
                         <q-card-section>
-                            <q-input dense outlined v-model="email" type="text" label="Usuario"></q-input>
-                            <q-input dense outlined class="q-mt-md" v-model="password" type="password"
-                                label="Contraseña"></q-input>
+                            <div class="input-container">
+                                <label for="email">Usuario</label>
+                                <input id="email" class="custom-input" type="email" v-model="email" required>
+                            </div>
+                            <div class="input-container">
+                                <label for="password">Contraseña</label>
+                                <input id="password" class="custom-input" type="password" v-model="password" required>
+                            </div>
                         </q-card-section>
                         <q-card-section>
-                            <q-btn style="border-radius: 8px;" color="primary" rounded size="md" label="Ingresar" no-caps
+                            <q-btn style="border-radius: 8px;" color="primary" rounded size="md" label="Obtener Ficha" no-caps
                                 class="full-width" type="submit"></q-btn>
                         </q-card-section>
                         <q-card-section class="text-center q-pt-none">
@@ -51,22 +56,6 @@ export default defineComponent({
                 html: true
             });
 
-            // await AuthServices.login(this.email, this.password)
-            // .then(async () => {
-            //     dismiss()
-            //     this.registrar();
-            // },
-            //     (error) => {
-            //         dismiss()
-            //         this.showNotif(error.response.data[0].message)
-            //     }
-            // )
-            // .catch((error) => {
-            //     dismiss();
-            //     console.log("holi")
-            //     this.showNotif(error.message);
-            // })
-
             await axios.post("https://sistemas.cepreuna.edu.pe/api/v1/ficha/api-get-ficha",
                 {
                     email: this.email,
@@ -77,20 +66,22 @@ export default defineComponent({
                         Authorization: "cepreuna_v1_api",
                     },
                 }
-            ).then(async (response)=>{
+            ).then((response)=>{
                 dismiss()
                 if(response.data.status){
                     location.href = "https://sistemas.cepreuna.edu.pe/"+ response.data.datos
+                    this.email = ""
+                    this.password = ""
                 }else{
                     this.showNotif(response.data.mensajes)
+                    this.email = ""
+                    this.password = ""
                 }
-                this.email= ""
-                this.password= ""
             }).catch((error) => {
                 dismiss();
                 this.showNotif(error.message);
-                this.email= ""
-                this.password= ""
+                this.email = ""
+                this.password = ""
              });
 
         },
@@ -112,4 +103,23 @@ export default defineComponent({
     border-radius: 8px;
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.custom-input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.custom-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
 </style>
