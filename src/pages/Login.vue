@@ -11,11 +11,11 @@
                         </q-card-section>
                         <q-card-section>
                             <div class="input-container">
-                                <label for="email">Usuario</label>
+                                <label for="email">Correo Institucional:</label>
                                 <input id="email" class="custom-input" type="email" v-model="email" required>
                             </div>
                             <div class="input-container">
-                                <label for="password">Contraseña</label>
+                                <label for="password">Contraseña:</label>
                                 <input id="password" class="custom-input" type="password" v-model="password" required>
                             </div>
                         </q-card-section>
