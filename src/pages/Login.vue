@@ -6,7 +6,8 @@
                     <q-form @submit="login" class="q-gutter-md">
                         <q-card-section class="text-center">
                             <div class="text-grey-9 text-h5 text-weight-bold">Cepreuna Ficha Simulacro</div>
-                            <div class="text-grey-8">Recuerda que para recuperar tu ficha, primero tienes que estar registrado en el simulacro</div>
+                            <div class="text-grey-8">Recuerda que para recuperar tu ficha, primero tienes que estar
+                                registrado en el simulacro</div>
                             <q-img src="~assets/img/logo.png" />
                         </q-card-section>
                         <q-card-section>
@@ -20,8 +21,8 @@
                             </div>
                         </q-card-section>
                         <q-card-section>
-                            <q-btn style="border-radius: 8px;" color="primary" rounded size="md" label="Obtener Ficha" no-caps
-                                class="full-width" type="submit"></q-btn>
+                            <q-btn style="border-radius: 8px;" color="primary" rounded size="md" label="Obtener Ficha"
+                                no-caps class="full-width" type="submit"></q-btn>
                         </q-card-section>
                         <q-card-section class="text-center q-pt-none">
                         </q-card-section>
@@ -66,22 +67,22 @@ export default defineComponent({
                         Authorization: "cepreuna_v1_api",
                     },
                 }
-            ).then((response)=>{
+            ).then((response) => {
                 dismiss()
-                if(response.data.status){
-                    location.href = "https://sistemas.cepreuna.edu.pe/"+ response.data.datos
-                    this.email = ""
-                    this.password = ""
-                }else{
+                if (response.data.status) {
+                    location.href = "https://sistemas.cepreuna.edu.pe/" + response.data.datos
+                } else {
                     this.showNotif(response.data.mensajes)
-                    this.email = ""
-                    this.password = ""
+                    setTimeout(() => {
+                        location.reload();
+                    }, 3000);
                 }
             }).catch((error) => {
                 dismiss();
                 this.showNotif(error.message);
-                this.email = ""
-                this.password = ""
+                setTimeout(() => {
+                    location.reload();
+                }, 3000);
              });
 
         },
@@ -121,5 +122,4 @@ export default defineComponent({
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
-
 </style>
